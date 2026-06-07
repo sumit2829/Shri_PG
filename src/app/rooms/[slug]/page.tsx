@@ -39,7 +39,7 @@ export default async function RoomDetailPage({ params }: { params: Promise<{ slu
             <p className="eyebrow">{room.ac ? "AC Room" : "Non AC Room"}</p>
             <h1 className="mt-3 text-4xl font-black text-slate-950 dark:text-white">{room.title}</h1>
             <p className="mt-4 text-3xl font-black text-primary-600 dark:text-blue-300">₹{room.price.toLocaleString("en-IN")}/month</p>
-            <p className="mt-2 font-bold text-emerald-600">{room.available}</p>
+            <p className="mt-2 font-bold text-emerald-600">Available</p>
             <div className="mt-6 grid gap-3">
               {room.features.map((feature) => (
                 <span key={feature} className="flex items-center gap-3 text-sm font-semibold text-slate-700 dark:text-slate-200">

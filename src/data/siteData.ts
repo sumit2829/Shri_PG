@@ -44,6 +44,7 @@ export const rooms = [
     type: "Single",
     ac: true,
     price: 13500,
+    available: "Available",
     images: ["/single-room.jpg", "/gallery/bed2.jpg"],
     features: ["Private bed", "Study desk", "AC", "Attached washroom", "Meals included"]
   },
@@ -53,6 +54,7 @@ export const rooms = [
     type: "Single",
     ac: false,
     price: 13500,
+    available: "Available",
     images: ["/single-room.jpg", "/gallery/study-area7.jpg"],
     features: ["Private space", "Ventilated room", "Study desk", "Meals included", "WiFi"]
   },
@@ -62,6 +64,7 @@ export const rooms = [
     type: "Double",
     ac: true,
     price: 11000,
+    available: "Available",
     images: ["/Double%20Seater.jpg", "/gallery/bed2.jpg"],
     features: ["Two beds", "AC", "Wardrobes", "Housekeeping", "Power backup"]
   },
@@ -71,6 +74,7 @@ export const rooms = [
     type: "Double",
     ac: false,
     price: 11000,
+    available: "Available",
     images: ["/Double%20Seater.jpg", "/gallery/study-area8.jpg"],
     features: ["Two beds", "Natural light", "Common balcony", "WiFi", "Meals included"]
   },
@@ -80,6 +84,7 @@ export const rooms = [
     type: "Triple",
     ac: true,
     price: 9000,
+    available: "Available",
     images: ["/triple-room.jpg", "/gallery/bed2.jpg"],
     features: ["Three beds", "AC", "Lockers", "Study area", "CCTV coverage"]
   },
@@ -89,6 +94,7 @@ export const rooms = [
     type: "Triple",
     ac: false,
     price: 9000,
+    available: "Available",
     images: ["/triple-room.jpg", "/gallery/study-area7.jpg"],
     features: ["Budget friendly", "Three beds", "Lockers", "Daily cleaning", "Meals included"]
   }
