@@ -8,7 +8,13 @@ import type { rooms } from "@/data/siteData";
 
 type Room = (typeof rooms)[number];
 
-export function RoomCard({ room }: { room: Room }) {
+export function RoomCard({
+  room,
+  badgeLabel,
+}: {
+  room: Room;
+  badgeLabel?: string;
+}) {
   const [index, setIndex] = useState(0);
 
   return (
@@ -16,7 +22,7 @@ export function RoomCard({ room }: { room: Room }) {
       <div className="relative aspect-[4/3]">
         <Image src={room.images[index]} alt={room.title} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
         <div className="absolute left-3 top-3 flex gap-2">
-          <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-primary-700">{room.ac ? "AC" : "Non AC"}</span>
+          <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-primary-700">{badgeLabel ?? (room.ac ? "AC" : "Non AC")}</span>
           <span className="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-bold text-white">{room.available}</span>
         </div>
         <button aria-label="Previous image" onClick={() => setIndex((index + room.images.length - 1) % room.images.length)} className="absolute left-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-primary-700">

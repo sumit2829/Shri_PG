@@ -10,6 +10,11 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { facilities, homeGalleryImages, rooms, testimonials } from "@/data/siteData";
 import { site } from "@/lib/constants";
 
+const featuredRoomSlugs = ["single-ac", "double-sharing-ac", "triple-sharing-ac"];
+const featuredRooms = featuredRoomSlugs
+  .map((slug) => rooms.find((room) => room.slug === slug))
+  .filter((room): room is (typeof rooms)[number] => Boolean(room));
+
 export default function HomePage() {
   return (
     <>
@@ -35,8 +40,8 @@ export default function HomePage() {
             Choose single, double, triple, AC, and non AC options with meals, WiFi, cleaning, and security included.
           </SectionHeader>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {rooms.slice(0, 3).map((room) => (
-              <RoomCard key={room.slug} room={room} />
+            {featuredRooms.map((room) => (
+              <RoomCard key={room.slug} room={room} badgeLabel={`${room.type} Seater`} />
             ))}
           </div>
         </div>
