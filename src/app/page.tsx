@@ -41,7 +41,12 @@ export default function HomePage() {
           </SectionHeader>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredRooms.map((room) => (
-              <RoomCard key={room.slug} room={room} badgeLabel={`${room.type} Seater`} />
+              <RoomCard
+                key={room.slug}
+                room={room}
+                badgeLabel={`${room.type} Seater`}
+                titleLabel={`${room.type} Seater`}
+              />
             ))}
           </div>
         </div>

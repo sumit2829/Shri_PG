@@ -11,9 +11,11 @@ type Room = (typeof rooms)[number];
 export function RoomCard({
   room,
   badgeLabel,
+  titleLabel,
 }: {
   room: Room;
   badgeLabel?: string;
+  titleLabel?: string;
 }) {
   const [index, setIndex] = useState(0);
 
@@ -35,7 +37,7 @@ export function RoomCard({
       <div className="p-5">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="text-xl font-black text-slate-950 dark:text-white">{room.title}</h3>
+            <h3 className="text-xl font-black text-slate-950 dark:text-white">{titleLabel ?? room.title}</h3>
             <p className="mt-1 text-sm font-semibold text-slate-500 dark:text-slate-300">₹{room.price.toLocaleString("en-IN")}/month</p>
           </div>
           <div className="flex gap-2 text-primary-600 dark:text-blue-300">
