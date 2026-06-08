@@ -13,21 +13,23 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const room = rooms.find((item) => item.slug === params.slug);
+  const { slug } = await params;
+  const room = rooms.find((item) => item.slug === slug);
 
   return {
     title: room?.title ?? "Room Details",
   };
 }
 
-export default function RoomDetailPage({
+export default async function RoomDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const room = rooms.find((item) => item.slug === params.slug);
+  const { slug } = await params;
+  const room = rooms.find((item) => item.slug === slug);
 
   if (!room) {
     notFound();
@@ -81,7 +83,7 @@ export default function RoomDetailPage({
             </p>
 
             <p className="mt-2 font-bold text-emerald-600">
-              Available
+              {room.available}
             </p>
 
             <div className="mt-6 grid gap-3">
